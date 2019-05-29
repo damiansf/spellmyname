@@ -1,5 +1,4 @@
 import os
-import time
 
 def checkSpelling(userInput):
     if userInput == "damian sandhu-franceschi":
