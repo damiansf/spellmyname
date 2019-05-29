@@ -2,8 +2,8 @@ import os
 
 def checkSpelling(userInput):
     if userInput == "damian sandhu-franceschi":
-        print("You win!!! we don't give out prizes though... so please leave")
         playAudio("yes.mp3")
+        print("You win!!! we don't give out prizes though... so please leave")
         quitGame()
     else:
         playAudio("no.mp3")
