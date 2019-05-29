@@ -1,14 +1,17 @@
-from pygame import mixer
+import os
+import time
 
 def checkSpelling(userInput):
     if userInput == "damian sandhu-franceschi":
         print("You win!!! we don't give out prizes though... sooooo please leave")
+        playAudio("yes.mp3")
         quitGame()
     else:
+        playAudio("no.mp3")
         print("So close!!! (Just kidding... or am I)")
 
-def playAudio(times):
-    mixer.music.play(times, 0)
+def playAudio(soundFile):
+    os.system("afplay " + soundFile)
 def quitGame():
     exit()
 
@@ -16,9 +19,7 @@ def quitGame():
 print("Welcome to spell my name!\nA game that came from a joke and years of people spelling my name wrong\n\n")
 
 userInput = ""
-mixer.init()
-mixer.music.load("myname.mp3")
-playAudio(2)
+playAudio("myname.mp3")
 
 while userInput.lower() != 'q':
     userInput = str(input(("Enter L to hear my name again, Q if you want to quit or type a guess and hit enter:\n"))).lower()
@@ -26,6 +27,6 @@ while userInput.lower() != 'q':
     if userInput == 'q':
         quitGame()
     elif userInput == 'l':
-        playAudio(1)
+        playAudio("myname.mp3")
     else:
         checkSpelling(userInput)    
